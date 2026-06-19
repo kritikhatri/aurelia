@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ivory text-obsidian transition-colors duration-300;
+  }
+  
+  body.dark {
+    @apply bg-obsidian text-ivory;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-semibold;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism Styles */
+  .glass-nav {
+    @apply backdrop-blur-md bg-ivory/80 border-b border-plum/10 dark:bg-obsidian/80 dark:border-ivory/10;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-md bg-white/70 border border-plum/5 shadow-sm dark:bg-obsidian-light/60 dark:border-ivory/5;
+  }
+  
+  .glass-modal {
+    @apply backdrop-blur-lg bg-ivory/95 border border-plum/10 shadow-2xl dark:bg-obsidian/95 dark:border-ivory/10;
+  }
+
+  /* Custom Premium Buttons */
+  .btn-gold {
+    @apply px-6 py-2.5 bg-gold hover:bg-gold-dark text-obsidian font-semibold transition-all duration-300 rounded-none uppercase tracking-widest text-xs active:scale-95 shadow-md shadow-gold/10;
+  }
+
+  .btn-plum {
+    @apply px-6 py-2.5 bg-plum hover:bg-plum-light text-ivory font-semibold transition-all duration-300 rounded-none uppercase tracking-widest text-xs active:scale-95 shadow-md shadow-plum/10;
+  }
+
+  .btn-outline {
+    @apply px-6 py-2.5 border border-obsidian hover:bg-obsidian hover:text-ivory dark:border-ivory dark:hover:bg-ivory dark:hover:text-obsidian text-xs font-semibold transition-all duration-300 rounded-none uppercase tracking-widest active:scale-95;
+  }
+
+  /* Hide default scrollbars but keep active */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #121212;
+}
+::-webkit-scrollbar-thumb {
+  background: #3B1824;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+}
