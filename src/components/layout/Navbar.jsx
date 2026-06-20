@@ -32,22 +32,41 @@ const Navbar = ({ onOpenCart }) => {
         <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-1.5 focus:outline-none">
-            <svg className="w-8 h-8" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="42" fill="none" stroke="#D4AF37" stroke-width="4"/>
-              <circle cx="50" cy="50" r="24" fill="#3B1824"/>
+          <Link to="/" className="flex items-center gap-2 focus:outline-none group">
+            <svg className="w-7 h-7 transition-transform duration-500 group-hover:rotate-180" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#D4AF37" stroke-width="3"/>
+              <circle cx="50" cy="50" r="14" fill="none" stroke="#3B1824" stroke-width="2" className="dark:stroke-gold"/>
+              <line x1="50" y1="8" x2="50" y2="92" stroke="#D4AF37" stroke-width="2"/>
             </svg>
-            <span className="font-serif font-bold text-xl tracking-widest text-plum dark:text-ivory hidden sm:inline">AURELIA</span>
+            <span className="font-serif font-bold text-lg tracking-[0.2em] text-plum dark:text-ivory group-hover:text-gold transition-colors duration-300">AURELIA</span>
           </Link>
 
           {/* Nav Links - Desktop */}
-          <nav className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-plum/80 dark:text-ivory/80">
-            <Link to="/shop" className="hover:text-gold transition-colors duration-200">Shop</Link>
-            <Link to="/quiz" className="hover:text-gold transition-colors duration-200 flex items-center gap-1"><Sparkles className="w-3.5 h-3.5 text-gold" /> Skin Finder</Link>
-            <Link to="/layering-simulator" className="hover:text-gold transition-colors duration-200 flex items-center gap-1">Layering Lab <span className="px-1 py-0.5 text-[8px] bg-gold text-obsidian rounded font-bold">New</span></Link>
-            <Link to="/routine" className="hover:text-gold transition-colors duration-200">Routines</Link>
-            <Link to="/blog" className="hover:text-gold transition-colors duration-200">Editorial</Link>
-            <Link to="/community" className="hover:text-gold transition-colors duration-200">Community</Link>
+          <nav className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-[0.15em] text-plum/80 dark:text-ivory/80">
+            {[
+              { label: 'Shop', path: '/shop' },
+              { label: 'Skin Finder', path: '/quiz', icon: <Sparkles className="w-3.5 h-3.5 text-gold" /> },
+              { label: 'Layering Lab', path: '/layering-simulator', badge: 'New' },
+              { label: 'Routines', path: '/routine' },
+              { label: 'Editorial', path: '/blog' },
+              { label: 'Community', path: '/community' }
+            ].map((link, idx) => (
+              <Link 
+                key={idx} 
+                to={link.path} 
+                className="relative py-2 hover:text-gold transition-colors duration-300 flex items-center gap-1 group"
+              >
+                {link.icon}
+                <span>{link.label}</span>
+                {link.badge && (
+                  <span className="px-1 py-0.5 text-[8px] bg-gold text-obsidian rounded font-bold tracking-normal uppercase">
+                    {link.badge}
+                  </span>
+                )}
+                {/* Smooth Underline */}
+                <span className="absolute bottom-0 left-0 w-full h-[1px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              </Link>
+            ))}
           </nav>
 
           {/* Action icons */}

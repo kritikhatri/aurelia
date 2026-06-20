@@ -5,6 +5,7 @@ import api from '../services/api';
 import ProductCard from '../components/product/ProductCard';
 import { SkeletonGrid } from '../components/common/Skeleton';
 import { SlidersHorizontal, Search, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Shop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -93,13 +94,16 @@ const Shop = () => {
   };
 
   return (
-    <div className="space-y-8 pb-16">
+    <div className="space-y-8 pb-16 relative bg-gradient-to-br from-ivory/30 via-white to-ivory/20 dark:from-obsidian dark:via-black dark:to-obsidian-light/10">
       
       {/* Title */}
-      <div className="text-center py-6 border-b border-plum/5 dark:border-ivory/5">
-        <h1 className="text-4xl font-serif text-plum dark:text-ivory">The Aurelia Apothecary</h1>
-        <p className="text-xs uppercase tracking-widest text-plum/50 dark:text-ivory/50 mt-2 font-semibold">
-          High-Performance Skincare, Perfumes, and Botanical Pigments
+      <div className="text-center py-10 relative overflow-hidden bg-plum/5 dark:bg-black/20 border-b border-plum/10 dark:border-ivory/10">
+        <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-transparent to-plum/5" />
+        <h1 className="text-4xl sm:text-5xl font-serif text-plum dark:text-ivory relative z-10 font-bold tracking-wide">
+          The Aurelia <span className="italic font-light">Apothecary</span>
+        </h1>
+        <p className="text-[10px] uppercase tracking-[0.25em] text-gold mt-3 font-bold relative z-10">
+          Scientific Botanical Couture & Molecular Formulations
         </p>
       </div>
 
@@ -136,28 +140,38 @@ const Shop = () => {
           </div>
 
           {/* Category Filter */}
-          <div className="space-y-2">
-            <span className="text-[10px] uppercase font-bold tracking-wider text-gold">Category</span>
-            <div className="flex flex-col gap-2.5 mt-2">
-              <label className="flex items-center gap-2.5 text-xs text-plum/70 dark:text-ivory/70 cursor-pointer">
+          <div className="space-y-3">
+            <span className="text-[10px] uppercase font-bold tracking-[0.15em] text-gold">Category</span>
+            <div className="flex flex-col gap-3 mt-1">
+              <label className="group flex items-center gap-3 text-xs text-plum/70 dark:text-ivory/70 cursor-pointer hover:text-gold transition-colors duration-200">
                 <input
                   type="radio"
                   name="category"
                   checked={category === ''}
                   onChange={() => { setCategory(''); updateFilters('category', ''); }}
-                  className="accent-plum dark:accent-gold"
+                  className="sr-only"
                 />
+                <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                  category === '' ? 'border-gold bg-gold/10' : 'border-plum/20 dark:border-ivory/20 group-hover:border-gold/50'
+                }`}>
+                  {category === '' && <div className="w-1.5 h-1.5 rounded-full bg-gold" />}
+                </div>
                 <span>All Collections</span>
               </label>
               {categories?.map((cat) => (
-                <label key={cat._id} className="flex items-center gap-2.5 text-xs text-plum/70 dark:text-ivory/70 cursor-pointer">
+                <label key={cat._id} className="group flex items-center gap-3 text-xs text-plum/70 dark:text-ivory/70 cursor-pointer hover:text-gold transition-colors duration-200">
                   <input
                     type="radio"
                     name="category"
                     checked={category === cat._id}
                     onChange={() => { setCategory(cat._id); updateFilters('category', cat._id); }}
-                    className="accent-plum dark:accent-gold"
+                    className="sr-only"
                   />
+                  <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                    category === cat._id ? 'border-gold bg-gold/10' : 'border-plum/20 dark:border-ivory/20 group-hover:border-gold/50'
+                  }`}>
+                    {category === cat._id && <div className="w-1.5 h-1.5 rounded-full bg-gold" />}
+                  </div>
                   <span>{cat.name}</span>
                 </label>
               ))}
@@ -165,18 +179,23 @@ const Shop = () => {
           </div>
 
           {/* Skin Type suitability */}
-          <div className="space-y-2">
-            <span className="text-[10px] uppercase font-bold tracking-wider text-gold">Skin Type</span>
-            <div className="flex flex-col gap-2.5 mt-2">
+          <div className="space-y-3">
+            <span className="text-[10px] uppercase font-bold tracking-[0.15em] text-gold">Skin Type</span>
+            <div className="flex flex-col gap-3 mt-1">
               {['', 'Dry', 'Oily', 'Combo', 'Sensitive', 'Normal'].map((type) => (
-                <label key={type} className="flex items-center gap-2.5 text-xs text-plum/70 dark:text-ivory/70 cursor-pointer">
+                <label key={type} className="group flex items-center gap-3 text-xs text-plum/70 dark:text-ivory/70 cursor-pointer hover:text-gold transition-colors duration-200">
                   <input
                     type="radio"
                     name="skinType"
                     checked={skinType === type}
                     onChange={() => { setSkinType(type); updateFilters('skinType', type); }}
-                    className="accent-plum dark:accent-gold"
+                    className="sr-only"
                   />
+                  <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                    skinType === type ? 'border-gold bg-gold/10' : 'border-plum/20 dark:border-ivory/20 group-hover:border-gold/50'
+                  }`}>
+                    {skinType === type && <div className="w-1.5 h-1.5 rounded-full bg-gold" />}
+                  </div>
                   <span>{type === '' ? 'All Types' : type}</span>
                 </label>
               ))}
@@ -288,11 +307,30 @@ const Shop = () => {
               <button onClick={handleClearFilters} className="btn-plum text-xs">Reset All Filters</button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <motion.div 
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.05 }
+                }
+              }}
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+            >
               {data?.products?.map((prod) => (
-                <ProductCard key={prod._id} product={prod} />
+                <motion.div
+                  key={prod._id}
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } }
+                  }}
+                >
+                  <ProductCard product={prod} />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           )}
 
           {/* Pagination Controls */}
