@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create Axios Instance
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5500/api',
   withCredentials: true, // Crucial for refresh token cookies
   headers: {
     'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ api.interceptors.response.use(
       try {
         // Fetch new access token
         const refreshResponse = await axios.post(
-          `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'}/auth/refresh`,
+          `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5500/api'}/auth/refresh`,
           {},
           { withCredentials: true }
         );

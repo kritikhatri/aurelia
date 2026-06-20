@@ -67,15 +67,16 @@ export const seedData = async () => {
 
     // 3. Seed Products (30 items)
     const productsData = [
+      // Skincare (1-8)
       {
-        name: 'Golden Hour Peptide Elixir',
-        slug: 'golden-hour-peptide-elixir',
-        description: 'An ultra-lightweight botanical facial oil enriched with active copper peptides and squalane. Refines pores and grants a natural, luminous skin dew.',
+        name: 'Aurelia Golden Hour Peptide Elixir',
+        slug: 'aurelia-golden-hour-peptide-elixir',
+        description: 'Our signature lightweight botanical facial oil. Enriched with active copper peptides, cold-pressed plant squalane, and rosehip extract. Restores moisture levels and grants a natural, champagne-gold skin radiance.',
         category: catMap['skincare'],
         subCategory: serumsSub._id,
         price: 78,
         compareAtPrice: 95,
-        images: ['https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500'],
+        images: ['/images/peptide_elixir.png'],
         stock: 45,
         ingredients: ['Squalane', 'Copper Tripeptide-1', 'Rosehip Oil', 'Jojoba Seed Extract', 'Tocopherol'],
         skinTypeSuitability: ['Dry', 'Combo', 'Normal'],
@@ -89,14 +90,14 @@ export const seedData = async () => {
         ]
       },
       {
-        name: 'Velvet Hydra-Infusion Cream',
-        slug: 'velvet-hydra-infusion-cream',
-        description: 'A luxurious daily moisturizer blending multi-molecular weight hyaluronic acids with ceramides to lock in moisture and reinforce the skin barrier.',
+        name: 'Aurelia 24k Gold Barrier Cream',
+        slug: 'aurelia-24k-gold-barrier-cream',
+        description: 'A rich, decadent daily moisturizing cream infused with colloidal 24k gold flakes, skin-replenishing ceramides, and multi-weight hyaluronic acids to lock in moisture and soothe sensitive skin.',
         category: catMap['skincare'],
-        price: 64,
-        images: ['https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=500'],
+        price: 68,
+        images: ['/images/gold_cream.png'],
         stock: 35,
-        ingredients: ['Ceramide NP', 'Hyaluronic Acid', 'Shea Butter', 'Centella Asiatica', 'Panthenol'],
+        ingredients: ['Colloidal Gold', 'Ceramide NP', 'Hyaluronic Acid', 'Shea Butter', 'Centella Asiatica', 'Panthenol'],
         skinTypeSuitability: ['Dry', 'Sensitive', 'Normal'],
         tags: ['hydration', 'barrier-repair'],
         ratingsAvg: 4.9,
@@ -104,9 +105,9 @@ export const seedData = async () => {
         isFeatured: true
       },
       {
-        name: 'Oatmeal Rosewater Gel Cleanser',
-        slug: 'oatmeal-rosewater-gel-cleanser',
-        description: 'A pH-balanced foaming gel cleanser that removes dirt and makeup without stripping natural protective oils.',
+        name: 'Aurelia Oat & Rosewater Gel Cleanser',
+        slug: 'aurelia-oat-rosewater-gel-cleanser',
+        description: 'A pH-balanced foaming gel cleanser that removes dirt and makeup without stripping natural protective oils, carrying a light scent of organic Bulgarian rosewater.',
         category: catMap['skincare'],
         price: 32,
         images: ['https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500'],
@@ -118,23 +119,23 @@ export const seedData = async () => {
         ratingsCount: 42
       },
       {
-        name: 'Overnight Resurfacing AHA Peel',
-        slug: 'overnight-resurfacing-aha-peel',
-        description: 'A 10% Glycolic and Lactic Acid resurfacing concentrate that exfoliates dead cells for smooth texture and even tone.',
+        name: 'Aurelia Deep Plum Resurfacing Peel',
+        slug: 'aurelia-deep-plum-resurfacing-peel',
+        description: 'A 10% Glycolic and Lactic Acid resurfacing concentrate that exfoliates dead cells for smooth texture and even tone. Infused with organic plum extract to reduce redness.',
         category: catMap['skincare'],
         price: 52,
-        images: ['https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=500'],
+        images: ['/images/plum_peel.png'],
         stock: 20,
-        ingredients: ['Glycolic Acid', 'Lactic Acid', 'Salicylic Acid', 'Green Tea Extract'],
+        ingredients: ['Glycolic Acid', 'Lactic Acid', 'Salicylic Acid', 'Plum Fruit Extract'],
         skinTypeSuitability: ['Combo', 'Oily', 'Normal'],
         tags: ['exfoliate', 'peel'],
         ratingsAvg: 4.5,
         ratingsCount: 15
       },
       {
-        name: 'Celestial Caffeine Eye Balm',
-        slug: 'celestial-caffeine-eye-balm',
-        description: 'Rich, whipped eye cream containing caffeine and red ginseng to reduce puffiness and dark circles.',
+        name: 'Aurelia Celestial Caffeine Eye Balm',
+        slug: 'aurelia-celestial-caffeine-eye-balm',
+        description: 'Rich, whipped eye cream containing caffeine and red ginseng to reduce puffiness and dark circles under the eyes. Packaged in a signature champagne-gold jar.',
         category: catMap['skincare'],
         price: 48,
         images: ['https://images.unsplash.com/photo-1617897903246-719242758050?w=500'],
@@ -146,9 +147,9 @@ export const seedData = async () => {
         ratingsCount: 30
       },
       {
-        name: 'Sun Veil Lightweight SPF 50',
-        slug: 'sun-veil-lightweight-spf-50',
-        description: 'A mineral broad-spectrum sunscreen that leaves no white cast, featuring non-nano zinc oxide and antioxidant plum extract.',
+        name: 'Aurelia Sun Veil SPF 50 Broad Spectrum',
+        slug: 'aurelia-sun-veil-spf-50-broad-spectrum',
+        description: 'A mineral broad-spectrum sunscreen that leaves no white cast, featuring non-nano zinc oxide, antioxidant green tea, and calming plum extracts.',
         category: catMap['skincare'],
         price: 38,
         images: ['https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=500'],
@@ -161,24 +162,24 @@ export const seedData = async () => {
         isFeatured: true
       },
       {
-        name: 'Niacinamide Radiance Serum',
-        slug: 'niacinamide-radiance-serum',
-        description: 'A 10% niacinamide and zinc serum that balances sebum production and minimizes skin redness.',
+        name: 'Aurelia Niacinamide Gold Serum',
+        slug: 'aurelia-niacinamide-gold-serum',
+        description: 'A 10% niacinamide and zinc serum that balances sebum production and minimizes skin redness, with gold micro-pearls for light reflection.',
         category: catMap['skincare'],
         subCategory: serumsSub._id,
         price: 45,
         images: ['https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500'],
         stock: 40,
-        ingredients: ['Niacinamide 10%', 'Zinc PCA 1%', 'Allantoin', 'Licorice Root Extract'],
+        ingredients: ['Niacinamide 10%', 'Zinc PCA 1%', 'Allantoin', 'Gold Micro-pearls'],
         skinTypeSuitability: ['Oily', 'Combo', 'Normal'],
         tags: ['sebum-control', 'redness'],
         ratingsAvg: 4.7,
         ratingsCount: 29
       },
       {
-        name: 'Squalane Melting Cleansing Balm',
-        slug: 'squalane-melting-cleansing-balm',
-        description: 'A nourishing balm-to-oil cleanser that melts away waterproof makeup, excess oil, and sunscreen effortlessly.',
+        name: 'Aurelia Squalane Melting Cleansing Balm',
+        slug: 'aurelia-squalane-melting-cleansing-balm',
+        description: 'A nourishing balm-to-oil cleanser that melts away waterproof makeup, excess oil, and sunscreen, leaving skin feeling soft and moisturized.',
         category: catMap['skincare'],
         price: 36,
         images: ['https://images.unsplash.com/photo-1617897903246-719242758050?w=500'],
@@ -192,9 +193,9 @@ export const seedData = async () => {
 
       // Makeup (9-14)
       {
-        name: 'Satin Silk Breathable Foundation',
-        slug: 'satinsilk-breathable-foundation',
-        description: 'A buildable medium-coverage foundation that leaves a satin, skin-like finish. Infused with skin-loving glycerin.',
+        name: 'Aurelia Satin Silk Breathable Foundation',
+        slug: 'aurelia-satin-silk-breathable-foundation',
+        description: 'A buildable medium-coverage foundation that leaves a satin, skin-like finish. Infused with skin-loving plant glycerin and gold pigments.',
         category: catMap['makeup'],
         price: 58,
         images: ['https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500'],
@@ -212,8 +213,8 @@ export const seedData = async () => {
         ]
       },
       {
-        name: 'Dewy Veil Illuminating Primer',
-        slug: 'dewyveil-illuminating-primer',
+        name: 'Aurelia Dewy Veil Illuminating Primer',
+        slug: 'aurelia-dewy-veil-illuminating-primer',
         description: 'A lightweight hydrating gel primer packed with gold pearls to grip makeup and offer an editorial candlelit glow.',
         category: catMap['makeup'],
         price: 44,
@@ -227,12 +228,12 @@ export const seedData = async () => {
         isFeatured: true
       },
       {
-        name: 'Velvet Lip Jewel Lipstick',
-        slug: 'velvet-lip-jewel-lipstick',
+        name: 'Aurelia Velvet Lip Jewel Lipstick',
+        slug: 'aurelia-velvet-lip-jewel-lipstick',
         description: 'A luxury matte lipstick presented in an elegant obsidian container. Yields intense color payoff in a single swipe.',
         category: catMap['makeup'],
         price: 38,
-        images: ['https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500'],
+        images: ['/images/lip_jewel.png'],
         stock: 90,
         ingredients: ['Cocoa Butter', 'Carnauba Wax', 'Rosehip Oil', 'Pure Pigment Concentrate'],
         skinTypeSuitability: ['Dry', 'Combo', 'Oily', 'Normal'],
@@ -246,8 +247,8 @@ export const seedData = async () => {
         ]
       },
       {
-        name: 'Celestial Baked Gold Highlighter',
-        slug: 'celestial-baked-gold-highlighter',
+        name: 'Aurelia Celestial Baked Gold Highlighter',
+        slug: 'aurelia-celestial-baked-gold-highlighter',
         description: 'Baked powder highlighter reflecting multidimensional gold shimmer. Gives a high-end editorial wet look.',
         category: catMap['makeup'],
         price: 42,
@@ -260,8 +261,8 @@ export const seedData = async () => {
         ratingsCount: 14
       },
       {
-        name: 'Precision Ink Eyeliner',
-        slug: 'precision-ink-eyeliner',
+        name: 'Aurelia Precision Ink Eyeliner',
+        slug: 'aurelia-precision-ink-eyeliner',
         description: 'Waterproof liquid eyeliner with an ultra-fine felt tip for flawless wing definition. Rich obsidian black.',
         category: catMap['makeup'],
         price: 28,
@@ -274,8 +275,8 @@ export const seedData = async () => {
         ratingsCount: 38
       },
       {
-        name: 'Volumizing Lash Serum Mascara',
-        slug: 'volumizing-lash-serum-mascara',
+        name: 'Aurelia Volumizing Lash Serum Mascara',
+        slug: 'aurelia-volumizing-lash-serum-mascara',
         description: 'A conditioning deep-black mascara formulated with biotin to promote longer, stronger natural eyelashes.',
         category: catMap['makeup'],
         price: 34,
@@ -290,8 +291,8 @@ export const seedData = async () => {
 
       // Haircare (15-20)
       {
-        name: 'Royal Rosehip Botanical Shampoo',
-        slug: 'royal-rosehip-botanical-shampoo',
+        name: 'Aurelia Royal Rosehip Botanical Shampoo',
+        slug: 'aurelia-royal-rosehip-botanical-shampoo',
         description: 'Sulfate-free restorative shampoo carrying rosehip and organic argan oil to nourish dull hair cuticles.',
         category: catMap['haircare'],
         price: 36,
@@ -304,8 +305,8 @@ export const seedData = async () => {
         ratingsCount: 31
       },
       {
-        name: 'Silk Infusion Smoothing Conditioner',
-        slug: 'silk-infusion-smoothing-conditioner',
+        name: 'Aurelia Silk Infusion Smoothing Conditioner',
+        slug: 'aurelia-silk-infusion-smoothing-conditioner',
         description: 'A protein-rich conditioner that detangles and locks in moisture, leaving hair feeling like silk satin.',
         category: catMap['haircare'],
         price: 38,
@@ -318,8 +319,8 @@ export const seedData = async () => {
         ratingsCount: 19
       },
       {
-        name: 'Miracle Repair Shea Hair Mask',
-        slug: 'miracle-repair-shea-hair-mask',
+        name: 'Aurelia Miracle Repair Shea Hair Mask',
+        slug: 'aurelia-miracle-repair-shea-hair-mask',
         description: 'A deep-conditioning repair treatment mask targeting heat-damaged and color-treated hair.',
         category: catMap['haircare'],
         price: 48,
@@ -333,8 +334,8 @@ export const seedData = async () => {
         isFeatured: true
       },
       {
-        name: 'Marula Golden Gloss Hair Oil',
-        slug: 'marula-golden-gloss-hair-oil',
+        name: 'Aurelia Marula Golden Gloss Hair Oil',
+        slug: 'aurelia-marula-golden-gloss-hair-oil',
         description: 'Frizz-reducing hair finish oil with jasmine petals and cold-pressed marula oil. Non-greasy finish.',
         category: catMap['haircare'],
         price: 52,
@@ -347,8 +348,8 @@ export const seedData = async () => {
         ratingsCount: 16
       },
       {
-        name: 'Scalp Detox Sea Salt Scrub',
-        slug: 'scalp-detox-sea-salt-scrub',
+        name: 'Aurelia Scalp Detox Sea Salt Scrub',
+        slug: 'aurelia-scalp-detox-sea-salt-scrub',
         description: 'An exfoliating scrub shampoo containing mineral sea salt crystals to remove scalp buildup.',
         category: catMap['haircare'],
         price: 42,
@@ -361,8 +362,8 @@ export const seedData = async () => {
         ratingsCount: 18
       },
       {
-        name: 'Keratin Volume Mist',
-        slug: 'keratin-volume-mist',
+        name: 'Aurelia Keratin Volume Mist',
+        slug: 'aurelia-keratin-volume-mist',
         description: 'A light spray styling mist that thickens fine hair strands and adds root volume without stiffness.',
         category: catMap['haircare'],
         price: 34,
@@ -377,12 +378,12 @@ export const seedData = async () => {
 
       // Fragrance (21-25)
       {
-        name: 'Vespera Night Eau de Parfum',
-        slug: 'vespera-night-eau-de-parfum',
+        name: 'Aurelia Vespera Night Eau de Parfum',
+        slug: 'aurelia-vespera-night-eau-de-parfum',
         description: 'An editorial perfume statement. A rich blend of midnight black amber, sensual jasmine, and dark plum.',
         category: catMap['fragrance'],
         price: 115,
-        images: ['https://images.unsplash.com/photo-1541643600914-78b084683601?w=500'],
+        images: ['/images/fragrance.png'],
         stock: 25,
         ingredients: ['Organic Alcohol Base', 'Perfume Oils', 'Jasmine Concentrate', 'Amber Accord'],
         skinTypeSuitability: ['Dry', 'Combo', 'Oily', 'Sensitive', 'Normal'],
@@ -396,8 +397,8 @@ export const seedData = async () => {
         ]
       },
       {
-        name: 'Aura Gold Sandalwood Parfum',
-        slug: 'aura-gold-sandalwood-parfum',
+        name: 'Aurelia Aura Gold Sandalwood Parfum',
+        slug: 'aurelia-aura-gold-sandalwood-parfum',
         description: 'A warm, radiant blend of spicy bergamot, creamy sandalwood, and Madagascar vanilla pod extracts.',
         category: catMap['fragrance'],
         price: 120,
@@ -410,8 +411,8 @@ export const seedData = async () => {
         ratingsCount: 42
       },
       {
-        name: 'Soleil Blanc Tiare Cologne',
-        slug: 'soleil-blanc-tiare-cologne',
+        name: 'Aurelia Soleil Blanc Tiare Cologne',
+        slug: 'aurelia-soleil-blanc-tiare-cologne',
         description: 'A breezy cologne capturing sweet coconut water, tropical tiare flower petals, and sea salt.',
         category: catMap['fragrance'],
         price: 98,
@@ -424,8 +425,8 @@ export const seedData = async () => {
         ratingsCount: 20
       },
       {
-        name: 'Bois de Oud Intense',
-        slug: 'bois-de-oud-intense',
+        name: 'Aurelia Bois de Oud Intense',
+        slug: 'aurelia-bois-de-oud-intense',
         description: 'Deep, smoky oud wood balanced with dark patchouli leaves and a subtle touch of rose petals.',
         category: catMap['fragrance'],
         price: 135,
@@ -438,8 +439,8 @@ export const seedData = async () => {
         ratingsCount: 31
       },
       {
-        name: 'Bergamot Bloom Eau de Toilette',
-        slug: 'bergamot-bloom-eau-de-toilette',
+        name: 'Aurelia Bergamot Bloom Eau de Toilette',
+        slug: 'aurelia-bergamot-bloom-eau-de-toilette',
         description: 'A light, crisp fragrance highlighting fresh cold-pressed Italian bergamot, lemon blossom, and neroli.',
         category: catMap['fragrance'],
         price: 85,
@@ -452,10 +453,10 @@ export const seedData = async () => {
         ratingsCount: 15
       },
 
-      // Body Care (26-30+)
+      // Body Care (26-30)
       {
-        name: 'Crème de la Crème Body Butter',
-        slug: 'creme-de-la-creme-body-butter',
+        name: 'Aurelia Crème de la Crème Body Butter',
+        slug: 'aurelia-creme-de-la-creme-body-butter',
         description: 'Rich, whipped body butter made of raw shea butter and dark vanilla orchid extract. Hydrates for 24 hours.',
         category: catMap['body-care'],
         price: 46,
@@ -469,8 +470,8 @@ export const seedData = async () => {
         isFeatured: true
       },
       {
-        name: 'Golden Shimmer Dry Body Oil',
-        slug: 'golden-shimmer-dry-body-oil',
+        name: 'Aurelia Golden Shimmer Dry Body Oil',
+        slug: 'aurelia-golden-shimmer-dry-body-oil',
         description: 'A dry satin body oil infused with 24k gold shimmer flakes and hydrating argan oil. Instantly absorbs.',
         category: catMap['body-care'],
         price: 58,
@@ -484,8 +485,8 @@ export const seedData = async () => {
         isFeatured: true
       },
       {
-        name: 'Nourishing Lavender Hand Balm',
-        slug: 'nourishing-lavender-hand-balm',
+        name: 'Aurelia Nourishing Lavender Hand Balm',
+        slug: 'aurelia-nourishing-lavender-hand-balm',
         description: 'A restorative, non-sticky hand treatment balm infused with French lavender oil and honey extract.',
         category: catMap['body-care'],
         price: 24,
@@ -498,8 +499,8 @@ export const seedData = async () => {
         ratingsCount: 40
       },
       {
-        name: 'Eucalyptus Purifying Body Wash',
-        slug: 'eucalyptus-purifying-body-wash',
+        name: 'Aurelia Eucalyptus Purifying Body Wash',
+        slug: 'aurelia-eucalyptus-purifying-body-wash',
         description: 'An aromatherapy body wash carrying high concentrations of eucalyptus essential oil to energize and refresh.',
         category: catMap['body-care'],
         price: 28,
@@ -512,8 +513,8 @@ export const seedData = async () => {
         ratingsCount: 37
       },
       {
-        name: 'Crushed Almond Body Scrub',
-        slug: 'crushed-almond-body-scrub',
+        name: 'Aurelia Crushed Almond Body Scrub',
+        slug: 'aurelia-crushed-almond-body-scrub',
         description: 'A polishing body scrub featuring crushed sweet almond shells and nourishing almond oil to smooth rough patches.',
         category: catMap['body-care'],
         price: 36,
@@ -524,11 +525,83 @@ export const seedData = async () => {
         tags: ['exfoliate', 'almond'],
         ratingsAvg: 4.8,
         ratingsCount: 22
+      },
+      {
+        name: 'Aurelia Resveratrol Active Glow Serum',
+        slug: 'aurelia-resveratrol-active-glow-serum',
+        description: 'A highly concentrated antioxidant elixir blending pure French grape resveratrol and skin-firming Coenzyme Q10 to defend the barrier and boost light reflection.',
+        category: catMap['skincare'],
+        price: 85,
+        images: ['/images/peptide_elixir.png'],
+        stock: 30,
+        ingredients: ['Resveratrol 2%', 'Coenzyme Q10', 'Grape Seed Extract', 'Ferulic Acid'],
+        skinTypeSuitability: ['Dry', 'Normal', 'Combo', 'Sensitive'],
+        tags: ['antioxidant', 'glow', 'hydration'],
+        ratingsAvg: 4.9,
+        ratingsCount: 12,
+        isFeatured: true
+      },
+      {
+        name: 'Aurelia Sandalwood Oud Luxury Perfume Oil',
+        slug: 'aurelia-sandalwood-oud-luxury-perfume-oil',
+        description: 'A pure roll-on sensory parfum oil containing precious Mysore sandalwood, dry smoky oud wood, and warm vanilla bean extracts. Perfect for direct skin absorption.',
+        category: catMap['fragrance'],
+        price: 92,
+        images: ['/images/fragrance.png'],
+        stock: 25,
+        ingredients: ['Sandalwood Extract', 'Oud Wood Oil', 'Amber Accord', 'Jojoba Base Oil'],
+        skinTypeSuitability: ['Normal', 'Dry', 'Combo', 'Oily', 'Sensitive'],
+        tags: ['perfume', 'woody', 'roll-on'],
+        ratingsAvg: 4.8,
+        ratingsCount: 18
+      },
+      {
+        name: 'Aurelia Champagne Highlighting Balm',
+        slug: 'aurelia-champagne-highlighting-balm',
+        description: 'A hydrating highlight stick infused with solid cocoa lipids and champagne gold pearlescent dust. Glides effortlessly to outline high facial planes.',
+        category: catMap['makeup'],
+        price: 42,
+        images: ['/images/gold_cream.png'],
+        stock: 50,
+        ingredients: ['Champagne Pearl Dust', 'Cocoa Seed Butter', 'Squalane', 'Castor Seed Oil'],
+        skinTypeSuitability: ['Dry', 'Normal', 'Combo'],
+        tags: ['makeup', 'glow', 'highlight'],
+        ratingsAvg: 4.7,
+        ratingsCount: 14
+      },
+      {
+        name: 'Aurelia Velvet Rose Petal Matte Lipstick',
+        slug: 'aurelia-velvet-rose-petal-matte-lipstick',
+        description: 'A weightless, matte formulation that mimics the velvety feel of organic Bulgarian rose petals. Stays put for 12 hours without drying the lips.',
+        category: catMap['makeup'],
+        price: 38,
+        images: ['/images/lip_jewel.png'],
+        stock: 60,
+        ingredients: ['Rose Centifolia Extract', 'Shea Butter', 'Silica', 'Mineral Pigments'],
+        skinTypeSuitability: ['Normal', 'Dry', 'Combo'],
+        tags: ['lips', 'lipstick', 'matte'],
+        ratingsAvg: 4.8,
+        ratingsCount: 20
+      },
+      {
+        name: 'Aurelia Vitamin C & Kakadu Plum Brightening Serum',
+        slug: 'aurelia-vitamin-c-kakadu-plum-brightening-serum',
+        description: 'A stable 15% vitamin C complex combined with Kakadu plum extract to clear hyperpigmentation, brighten complexions, and support collagen syntheses.',
+        category: catMap['skincare'],
+        price: 64,
+        images: ['/images/plum_peel.png'],
+        stock: 45,
+        ingredients: ['L-Ascorbic Acid 15%', 'Kakadu Plum Extract', 'Ferulic Acid', 'Hyaluronic Acid'],
+        skinTypeSuitability: ['Normal', 'Combo', 'Oily'],
+        tags: ['brightening', 'vitamin-c', 'anti-aging'],
+        ratingsAvg: 4.7,
+        ratingsCount: 26,
+        isFeatured: true
       }
     ];
 
     await Product.insertMany(productsData);
-    console.log('Seeded 30 Products.');
+    console.log(`Seeded ${productsData.length} Products.`);
 
     // 4. Seed Coupons
     const couponsData = [

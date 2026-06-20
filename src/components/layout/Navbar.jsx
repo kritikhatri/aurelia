@@ -44,6 +44,7 @@ const Navbar = ({ onOpenCart }) => {
           <nav className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-plum/80 dark:text-ivory/80">
             <Link to="/shop" className="hover:text-gold transition-colors duration-200">Shop</Link>
             <Link to="/quiz" className="hover:text-gold transition-colors duration-200 flex items-center gap-1"><Sparkles className="w-3.5 h-3.5 text-gold" /> Skin Finder</Link>
+            <Link to="/layering-simulator" className="hover:text-gold transition-colors duration-200 flex items-center gap-1">Layering Lab <span className="px-1 py-0.5 text-[8px] bg-gold text-obsidian rounded font-bold">New</span></Link>
             <Link to="/routine" className="hover:text-gold transition-colors duration-200">Routines</Link>
             <Link to="/blog" className="hover:text-gold transition-colors duration-200">Editorial</Link>
             <Link to="/community" className="hover:text-gold transition-colors duration-200">Community</Link>

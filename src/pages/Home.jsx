@@ -38,7 +38,7 @@ const Home = () => {
         {/* Editorial Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1600"
+            src="/images/hero_editorial.png"
             alt="Aurelia Beauty Editorial"
             className="w-full h-full object-cover opacity-35 dark:opacity-20"
           />

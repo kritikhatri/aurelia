@@ -22,6 +22,7 @@ const RoutinePage = lazy(() => import('./pages/RoutinePage'));
 const SubscriptionPage = lazy(() => import('./pages/SubscriptionPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
+const LayeringSimulator = lazy(() => import('./pages/LayeringSimulator'));
 
 // Protected Routes
 const ProtectedRoute = ({ children }) => {
@@ -64,6 +65,7 @@ function App() {
             <Route path="routine" element={<RoutinePage />} />
             <Route path="subscription" element={<SubscriptionPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="layering-simulator" element={<LayeringSimulator />} />
             
             {/* Customer Protected */}
             <Route path="dashboard" element={
