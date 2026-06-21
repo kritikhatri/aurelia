@@ -14,7 +14,19 @@ export const getProducts = async (req, res) => {
     : {};
 
   // Filtering criteria
-  const categoryFilter = req.query.category ? { category: req.query.category } : {};
+  let categoryFilter = {};
+  if (req.query.category) {
+    if (/^[0-9a-fA-F]{24}$/.test(req.query.category)) {
+      categoryFilter = { category: req.query.category };
+    } else {
+      const foundCat = await Category.findOne({ slug: req.query.category });
+      if (foundCat) {
+        categoryFilter = { category: foundCat._id };
+      } else {
+        categoryFilter = { category: null };
+      }
+    }
+  }
   const subCategoryFilter = req.query.subCategory ? { subCategory: req.query.subCategory } : {};
   
   let skinTypeFilter = {};
